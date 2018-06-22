@@ -34,7 +34,7 @@ export default class TitleDocs extends MasterDocs {
             ${this.t}${this.t}}\`<br>
             ${this.t}], 'h1');`,
             `=> Proxify is based on ECMAScript Harmony Proxy. Please, read about 
-            <a href="https://developer.mozilla.org/en-US/Docs/Web/JavaScript/Reference/Global_Objects/Proxy" target="_blank">Proxy</a> 
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy" target="_blank">Proxy</a> 
             for base knowledge regarding the mechanics behind Proxify.`
         ];
     }
