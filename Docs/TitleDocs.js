@@ -42,7 +42,7 @@ export default class TitleDocs extends MasterDocs {
         const [title, code, note] = args;
         return el.$appendChildren([
             __('h1')
-                .$setInnerHTML(title)
+                .$setInnerHTML(`<a href="https://github.com/Weedshaker/Proxify" target="_blank">${title}</a>`)
                 .$css([
                     `{
                         /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000125+0,00f7ff+100&0.65+0,0+100 */
@@ -61,6 +61,9 @@ export default class TitleDocs extends MasterDocs {
                     }`,
                     `:hover{
                         text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+                    }`,
+                    ` a{
+                        text-decoration: none;
                     }`
                 ], 'h1'),
             __('div')
