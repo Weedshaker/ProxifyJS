@@ -4,11 +4,11 @@
   <h1 align="center">Proxify</h1>
 </p>
 
-Proxify __[Pro·xi·fy]__: a pure ES6 api:any - handler library backed by ECMAScript Harmony Proxy.
+Proxify __[Pro·xi·fy]__: a pure ES6 api:any - handler library backed by ECMAScript Harmony Proxy. Proxifies any object and goes far beyond...
 
 Do you wish the old days of simplicity back?
 
-...Everything is getting more and more complex around web application development but don't worry, not this one. No bundler nor any dependencies except of ES6 native <a href="https://developer.mozilla.org/en-US/Docs/Web/JavaScript/Reference/Global_Objects/Proxy" target="_blank">Proxy</a>!
+...Everything is getting more and more complex around web application development but don't worry, not this one. No bundler nor any dependencies, except of ES6 native <a href="https://developer.mozilla.org/en-US/Docs/Web/JavaScript/Reference/Global_Objects/Proxy" target="_blank">Proxy</a>!
 
 ## Usage
 
@@ -18,7 +18,7 @@ import { InitBasic } from './JavaScript/Classes/Controller/InitBasic.js';
 
 const __ = new ProxifyHook(InitBasic).get();
 
-__((document.getElementsByTagName('body')[0])).$appendChildren(
+__(document.getElementsByTagName('body')[0]).$appendChildren(
     [
         __('h2')
             .$setInnerHTML('Proxify')
@@ -55,4 +55,4 @@ The short snippet above merely gives a glimpse on what Proxify can do.
 
 Easily, deal not only with Web APIs but any API. Here a few tags: Events, Html, Css, Join, LocalStorage, WebWorkers, Method Chaining, Error Handling, Types, Debugging, ∞. All modular, lightweight and simple thanks to the power of Proxies.
 
-- [More information](https://github.com/Weedshaker/Proxify)
+- [Documentation & More information](https://weedshaker.github.io/Proxify/)
