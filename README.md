@@ -1,6 +1,6 @@
 <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
 <p align="center">
-  <img src="https://farm4.staticflickr.com/3917/14978448715_d060fe9949_k.jpg" width="300" height="147" alt="proxify">
+  <img src="https://farm4.staticflickr.com/3917/14978448715_d060fe9949_k.jpg" width="400" height="200" alt="proxify">
   <h1 align="center">Proxify</h1>
 </p>
 
@@ -8,7 +8,7 @@ Proxify __[Pro·xi·fy]__: a pure ES6 api:any - handler library backed by ECMASc
 
 Do you wish the old days of simplicity back?
 
-...Everything is getting more and more complex around web application development but don't worry, not this one. No bundler nor any dependencies, except of ES6 native <a href="https://developer.mozilla.org/en-US/Docs/Web/JavaScript/Reference/Global_Objects/Proxy" target="_blank">Proxy</a>!
+...Everything is getting more and more complex around web application development but don't worry, not this one. No bundler nor any dependencies, except of ES6 native <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy" target="_blank">Proxy</a>!
 
 ## Usage
 
