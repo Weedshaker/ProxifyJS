@@ -1,0 +1,36 @@
+{
+  "name": "proxify",
+  "version": "1.0.0",
+  "description": "a pure ES6 api:any - handler library backed by ECMAScript Harmony Proxy. Proxifies any object and goes far beyond...",
+  "main": "JavaScript/Classes/Helper/ProxifyHook.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Weedshaker/Proxify.git"
+  },
+  "keywords": [
+    "ECMAScript Harmony Proxy",
+    "ES6"
+    "Proxy",
+    "Events",
+    "Html",
+    "Css",
+    "Join",
+    "LocalStorage",
+    "WebWorkers",
+    "Method",
+    "Chaining",
+    "Error",
+    "Handling",
+    "Types",
+    "Debugging"
+  ],
+  "author": "Silvan Strübi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Weedshaker/Proxify/issues"
+  },
+  "homepage": "https://weedshaker.github.io/Proxify/"
+}
