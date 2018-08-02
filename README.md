@@ -7,6 +7,12 @@ A pure ES6 api:any - handler library backed by ECMAScript Harmony Proxy. Proxifi
 
 ...Everything is getting more and more complex around web application development but don't worry, not this one. No bundler nor any dependencies, except of ES6 native <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy" target="_blank">Proxy</a>!
 
+## Installation
+
+```js
+npm install Weedshaker/Proxify
+```
+
 ## Usage
 
 ```js
