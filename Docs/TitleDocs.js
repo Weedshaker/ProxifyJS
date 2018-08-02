@@ -10,7 +10,7 @@ export default class TitleDocs extends MasterDocs {
             'Proxify',
             `import { ProxifyHook } from './JavaScript/Classes/Helper/ProxifyHook.js';<br>
             import { InitBasic } from './JavaScript/Classes/Controller/InitBasic.js';<br><br>
-            <span>// InitBasic includes the traps: Events, Html, Css, Join, LocalStorage, WebWorkers, Chain, Proxify</span><br>
+            <span>// InitBasic includes the traps: Events, Html, Css, Subscribe, LocalStorage, WebWorkers, Chain, Proxify</span><br>
             const __ = new ProxifyHook(InitBasic).get();<br>
             __(document.getElementsByTagName('body')[0])<br>
             ${this.t}.appendChild(__('h1'))<br>

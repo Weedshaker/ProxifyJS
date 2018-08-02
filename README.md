@@ -50,6 +50,6 @@ __(document.getElementsByTagName('body')[0]).$appendChildren(
 
 The short snippet above merely gives a glimpse on what Proxify can do.
 
-Easily, deal not only with Web APIs but any API. Here a few tags: Events, Html, Css, Join, LocalStorage, WebWorkers, Method Chaining, Error Handling, Types, Debugging, ∞. All modular, lightweight and simple thanks to the power of Proxies.
+Easily, deal not only with Web APIs but any API. Here a few tags: Events, Html, Css, Subscribe, LocalStorage, WebWorkers, Method Chaining, Error Handling, Types, Debugging, ∞. All modular, lightweight and simple thanks to the power of Proxies.
 
 - [Documentation, Examples & More Information](https://weedshaker.github.io/Proxify/)

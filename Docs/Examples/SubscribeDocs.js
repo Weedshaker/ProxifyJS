@@ -1,22 +1,22 @@
 import MasterExamples from './MasterExamples.js';
 // used for examples
 import { ProxifyHook } from '../../JavaScript/Classes/Helper/ProxifyHook.js';
-import { Join } from '../../JavaScript/Classes/Traps/Data/Join.js';
+import { Subscribe } from '../../JavaScript/Classes/Traps/Data/Subscribe.js';
 
-export default class JoinDocs extends MasterExamples {
+export default class SubscribeDocs extends MasterExamples {
     constructor(makeGlobal) {
         super(makeGlobal);
-        this.name = 'joinDocs';
+        this.name = 'subscribeDocs';
         return this.html(__('div'), ...this.text());
     }
     text() {
         return [
-            'Join',
-            `The trap called Join at /JavaScript/Classes/Traps/Data/Join.js, does make a relationship between values on two 
+            'Subscribe',
+            `The trap called Subscribe at /JavaScript/Classes/Traps/Data/Subscribe.js, does make a relationship between values on two 
             different objects. Source automatically pushes designated values on localKey to target (destination[key]). A Dom 
             usecase scenario would be to have a state object, which gets manipulated by the result of your api calls, 
             and directly maps to a DOM nodes content.`,
-            `$join(destination, key, localKey, func = null);
+            `$subscribe(destination, key, localKey, func = null);
             <ul>
                 <li>destination: object = the object which holds the target property</li>
                 <li>key: string = the name of the target property (can be purposefully wrong, incase the default behavior 
@@ -25,7 +25,7 @@ export default class JoinDocs extends MasterExamples {
                 <li>[func]: function = a callback, which receives: the newValue and can handle things on its own manually</li>
             </ul>
             => returns the Proxy<br><br><br>
-            $disjoin(destination, key, localKey);
+            $unsubscribe(destination, key, localKey);
             <ul>
                 <li>destination: object = the object which holds the target property</li>
                 <li>key: string = the name of the target property</li>
@@ -33,7 +33,7 @@ export default class JoinDocs extends MasterExamples {
             </ul>
             => returns the Proxy`,
             `import { ProxifyHook } from './JavaScript/Classes/Helper/ProxifyHook.js;<br>
-            import { Join } from './JavaScript/Classes/Traps/Data/Join.js';<br><br>`,
+            import { Subscribe } from './JavaScript/Classes/Traps/Data/Subscribe.js';<br><br>`,
             'Example One',
             this.example1,
             `Please, open the console in your developer tools and change the string values of state.a, state.b or state.c!`,
@@ -44,7 +44,7 @@ export default class JoinDocs extends MasterExamples {
     }
     example1(receiver) {
         // assemble the ProxifyHook with the minimum traps required
-        const inject = new ProxifyHook(Join()).get();
+        const inject = new ProxifyHook(Subscribe()).get();
          
         // proxify the object to which binding shall take place
         const state = this.makeGlobal('state', inject(
@@ -60,10 +60,10 @@ export default class JoinDocs extends MasterExamples {
         const p2 = inject(document.createElement('p'));
         const p3 = inject('p');
          
-        // join nodes innerHTML to the values of state 'a', 'b' and 'c'
-        state.$join(p1, 'innerHTML', 'a');
-        state.$join(p2, 'innerHTML', 'b');
-        state.$join(p3, 'innerHTML', 'c');
+        // subscribe nodes innerHTML to the values of state 'a', 'b' and 'c'
+        state.$subscribe(p1, 'innerHTML', 'a');
+        state.$subscribe(p2, 'innerHTML', 'b');
+        state.$subscribe(p3, 'innerHTML', 'c');
          
         // append all to body, has to use the raw node, since we don't proxify the body in this statement
         receiver.appendChild(p1);
@@ -72,7 +72,7 @@ export default class JoinDocs extends MasterExamples {
     }
     example2(receiver) {
         // assemble the ProxifyHook with the minimum traps required
-        const inject = new ProxifyHook(Join()).get();
+        const inject = new ProxifyHook(Subscribe()).get();
          
         // proxify the object to which binding shall take place
         const state = this.makeGlobal('state', inject(
@@ -84,8 +84,8 @@ export default class JoinDocs extends MasterExamples {
         // append ul to body
         const ul = receiver.appendChild(document.createElement('ul'));
          
-        // join ul by custom function to the values of state 'a'
-        state.$join(ul, undefined, 'a', (values) => {
+        // subscribe ul by custom function to the values of state 'a'
+        state.$subscribe(ul, undefined, 'a', (values) => {
             ul.innerHTML = '';
             values.forEach(value => {
                 const li = document.createElement('li');
@@ -94,7 +94,7 @@ export default class JoinDocs extends MasterExamples {
             });
         });
         setTimeout(() => {
-            // the limitation is, that the prop has to be set directly, in the future Join will may support push, splice, etc. on arrays
+            // the limitation is, that the prop has to be set directly, in the future Subscribe will may support push, splice, etc. on arrays
             state.a = state.a.concat(['and hi!']);
         }, 5000);
     }

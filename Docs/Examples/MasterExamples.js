@@ -66,7 +66,7 @@ export default class MasterExamples extends MasterDocs {
             __('div')
                 .$func((receiver) => {
                     let firstRender = true;
-                    this.state.$join(receiver, undefined, 'expl', (value) => {
+                    this.state.$subscribe(receiver, undefined, 'expl', (value) => {
                         Array.from(document.getElementsByClassName(this.name + 'active')).forEach(e => e.classList.remove(this.name + 'active'));
                         const activeEl = document.getElementById(this.name + value);
                         if (activeEl) activeEl.classList.add(this.name + 'active');

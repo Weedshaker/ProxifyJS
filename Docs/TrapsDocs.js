@@ -10,7 +10,7 @@ export default class TrapsDocs extends MasterDocs {
             'Traps:',
             `Assemble traps as you like and/or write your own trap. In general its important to note, that not all traps require 
             the Proxify class. Have a look at the trap and make sure that it automatically includes Proxify or add Proxify at 
-            the center of your class assembling: <span>Events(Html(Css(Join(LocalStorage(WebWorkers(Chain(Proxify())))))))</span>. Be carefull 
+            the center of your class assembling: <span>Events(Html(Css(Subscribe(LocalStorage(WebWorkers(Chain(Proxify())))))))</span>. Be carefull 
             not to have a trap at the center of your assembling, which only requires Master, when further out traps require Proxify! 
             Each trap extends the trap passed to it...<br><br>
             Get started by creating a hook and hand it your desired trap collection:`,
@@ -22,14 +22,14 @@ export default class TrapsDocs extends MasterDocs {
             import { Chain } from './JavaScript/Classes/Traps/Misc/Chain.js';<br>
             import { WebWorkers } from './JavaScript/Classes/Traps/Misc/WebWorkers.js';<br>
             import { LocalStorage } from './JavaScript/Classes/Traps/Data/LocalStorage.js';<br>
-            import { Join } from './JavaScript/Classes/Traps/Data/Join.js';<br>
+            import { Subscribe } from './JavaScript/Classes/Traps/Data/Subscribe.js';<br>
             import { Css } from './JavaScript/Classes/Traps/Dom/Css.js';<br>
             import { Html } from './JavaScript/Classes/Traps/Dom/Html.js';<br>
             import { Events } from './JavaScript/Classes/Traps/Dom/Events.js';<br><br>
-            const inject = new ProxifyHook(Events(Html(Css(Join(LocalStorage(WebWorkers(Chain(Proxify())))))))).get();`,
+            const inject = new ProxifyHook(Events(Html(Css(Subscribe(LocalStorage(WebWorkers(Chain(Proxify())))))))).get();`,
             `Or simply use the preset collection called InitBasic:`,
             `import { ProxifyHook } from './JavaScript/Classes/Helper/ProxifyHook.js;<br><br>
-            // Includes traps: Events, Html, Css, Join, LocalStorage, WebWorkers, Chain, Proxify<br>
+            // Includes traps: Events, Html, Css, Subscribe, LocalStorage, WebWorkers, Chain, Proxify<br>
             import { InitBasic } from './JavaScript/Classes/Controller/InitBasic.js';<br><br>
             const inject = new ProxifyHook(InitBasic).get();`,
             `<span>This example page is completely driven by Proxify. You can see on how it works by looking at the source files of 
