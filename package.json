@@ -32,5 +32,11 @@
   "bugs": {
     "url": "https://github.com/Weedshaker/Proxify/issues"
   },
-  "homepage": "https://weedshaker.github.io/Proxify/"
+  "homepage": "https://weedshaker.github.io/Proxify/",
+  "devDependencies": {
+    "standard": "*"
+  },
+  "scripts": {
+    "test": "standard --fix"
+  }
 }

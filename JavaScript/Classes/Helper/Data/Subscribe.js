@@ -1,5 +1,5 @@
 export class Subscribe {
-    constructor() {
-        this.subscribeMap = null;
-    }
+  constructor () {
+    this.subscribeMap = null
+  }
 }
