@@ -9,30 +9,30 @@
 </head>
 <body>
     <script rel="modulepreload" type="module">
-        import { ProxifyHook } from './JavaScript/Classes/Helper/ProxifyHook.js';
-        import { InitBasic } from './JavaScript/Classes/Controller/InitBasic.js';
+        import { ProxifyHook } from './JavaScript/Classes/Helper/ProxifyHook.js'
+        import { InitBasic } from './JavaScript/Classes/Controller/InitBasic.js'
         // Docs
-        import TitleDocs from './Docs/TitleDocs.js';
-        import HowDocs from './Docs/HowDocs.js';
-        import WhyDocs from './Docs/WhyDocs.js';
-        import TrapsDocs from './Docs/TrapsDocs.js';
-        import ChainDocs from './Docs/Examples/ChainDocs.js';
-        import CssDocs from './Docs/Examples/CssDocs.js';
-        import DebugDocs from './Docs/Examples/DebugDocs.js';
-        import EventsDocs from './Docs/Examples/EventsDocs.js';
-        import HtmlDocs from './Docs/Examples/HtmlDocs.js';
-        import SubscribeDocs from './Docs/Examples/SubscribeDocs.js';
-        import LocalStorageDocs from './Docs/Examples/LocalStorageDocs.js';
-        import TryCatchDocs from './Docs/Examples/TryCatchDocs.js';
-        import TypesDocs from './Docs/Examples/TypesDocs.js';
-        import WebWorkersDocs from './Docs/Examples/WebWorkersDocs.js';
+        import TitleDocs from './Docs/TitleDocs.js'
+        import HowDocs from './Docs/HowDocs.js'
+        import WhyDocs from './Docs/WhyDocs.js'
+        import TrapsDocs from './Docs/TrapsDocs.js'
+        import ChainDocs from './Docs/Examples/ChainDocs.js'
+        import CssDocs from './Docs/Examples/CssDocs.js'
+        import DebugDocs from './Docs/Examples/DebugDocs.js'
+        import EventsDocs from './Docs/Examples/EventsDocs.js'
+        import HtmlDocs from './Docs/Examples/HtmlDocs.js'
+        import SubscribeDocs from './Docs/Examples/SubscribeDocs.js'
+        import LocalStorageDocs from './Docs/Examples/LocalStorageDocs.js'
+        import TryCatchDocs from './Docs/Examples/TryCatchDocs.js'
+        import TypesDocs from './Docs/Examples/TypesDocs.js'
+        import WebWorkersDocs from './Docs/Examples/WebWorkersDocs.js'
         // Menu
-        import AnchorMenu from './Docs/AnchorMenu.js';
-        import Scroll from './Docs/Scroll.js';
+        import AnchorMenu from './Docs/AnchorMenu.js'
+        import Scroll from './Docs/Scroll.js'
 
         class Index {
             constructor() {
-                this.makeGlobal('__', new ProxifyHook(InitBasic).get());
+                this.makeGlobal('__', new ProxifyHook(InitBasic).get())
                 const body = __(document.getElementsByTagName('body')[0])
                       .$setStyle('background: GhostWhite; font-family: "Open Sans", sans-serif;')
                       .$appendChildren([
@@ -50,16 +50,16 @@
                           new TryCatchDocs(this.makeGlobal),
                           new TypesDocs(this.makeGlobal),
                           new WebWorkersDocs(this.makeGlobal)
-                      ]);
+                      ])
                 // above renders out, so that AnchorMenu can grab body.h2 tags
-                body.insertBefore(new AnchorMenu(body), body.children[2]);
-                new Scroll();
+                body.insertBefore(new AnchorMenu(body), body.children[2])
+                new Scroll()
             }
             makeGlobal(name, obj) {
-                return window[name] = obj;
+                return window[name] = obj
             }
         }
-        new Index();
+        new Index()
     </script>
 </body>
 </html>

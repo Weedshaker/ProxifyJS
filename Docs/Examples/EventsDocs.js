@@ -16,7 +16,7 @@ export default class EventsDocs extends MasterExamples {
       `The trap called Events at /JavaScript/Classes/Traps/Dom/Events.js, does manage Dom events starting with on..., 
             like onclick, onblur, etc. This trap allows multiple callback functions to be applied to a typical single callback 
             event binding.`,
-      `$on + "eventName"(funcArr, command = 'push');
+      `$on + "eventName"(funcArr, command = 'push')
             <ul>
                 <li>funcArr: function | Array&lt;function, [memory]: object&gt; = simply pass one function as callback and the memory 
                 will be set as an empty object {}. Or pass an array with [function, memory]. The callback receives: dom event, memory, target, prop, receiver. 
@@ -24,11 +24,11 @@ export default class EventsDocs extends MasterExamples {
                 <li>[command]: string = the command which will be executed on the array, holding all callbacks for this event. 
                 Typically use 'push' to attach the event to the end of the execution loop or 'unshift' to push it at first position. Use an 
                 unknown array command like 'remove', to have the passed in callback function removed. (You can also remove all 
-                callbacks by passing $on + "eventName"(false, 'remove');)</li>
+                callbacks by passing $on + "eventName"(false, 'remove'))</li>
             </ul>
             => returns the Proxy`,
-      `import { ProxifyHook } from './JavaScript/Classes/Helper/ProxifyHook.js;<br>
-            import { Events } from './JavaScript/Classes/Traps/Dom/Events.js';<br><br>`,
+      `import { ProxifyHook } from './JavaScript/Classes/Helper/ProxifyHook.js'<br>
+            import { Events } from './JavaScript/Classes/Traps/Dom/Events.js'<br><br>`,
       'Example One',
       this.example1,
       `Click on the text above. Also, open the console in your developer tools and add or remove more events to eventsP!`,

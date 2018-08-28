@@ -16,30 +16,30 @@ export default class ChainDocs extends MasterExamples {
       `The trap called Chain at /JavaScript/Classes/Traps/Misc/Chain.js, does Method Chaining. The $get and $set allow 
             accessing properties as a function statement. $func makes it easy to execute any function within the method chaining and $_ can be prepended 
             to any function name on the target object, to have it return the Proxy itself and for that doesn't break the chain.`,
-      `$get + "propName"(func = undefined, ...args = undefined);
+      `$get + "propName"(func = undefined, ...args = undefined)
             <ul>
                 <li>[func]: function = a callback, which receives: receiver, prop, receiver[prop] (the value of the property), ...args.</li>
                 <li>[...args]: any = arguments which will be passed to the function.</li>
             </ul>
             => returns the Proxy, if a function is passed in. Else, it will return the value.<br><br><br>
-            $set + "propName"(argument);
+            $set + "propName"(argument)
             <ul>
                 <li>argument: any = the value which shall be set to the property.</li>
             </ul>
             => returns the Proxy<br><br><br>
-            $func(func, ...args);
+            $func(func, ...args)
             <ul>
                 <li>func: function = a function, which will be executed within the method chaining and receives: receiver, ...args.</li>
                 <li>[...args]: any = arguments which will be passed to the function.</li>
             </ul>
             => returns the Proxy<br><br><br>
-            $_ + "functionName"(...args = undefined);
+            $_ + "functionName"(...args = undefined)
             <ul>
                 <li>[...args]: any = arguments which will be passed to the function.</li>
             </ul>
             => returns the Proxy`,
-      `import { ProxifyHook } from './JavaScript/Classes/Helper/ProxifyHook.js;<br>
-            import { Chain } from './JavaScript/Classes/Traps/Misc/Chain.js';<br><br>`,
+      `import { ProxifyHook } from './JavaScript/Classes/Helper/ProxifyHook.js<br>
+            import { Chain } from './JavaScript/Classes/Traps/Misc/Chain.js'<br><br>`,
       'Example without comments',
       this.example1,
       `Please, open the console in your developer tools and play with chainState!`,
@@ -96,14 +96,14 @@ export default class ChainDocs extends MasterExamples {
     }))
     // getTrapGet: get an object property and hand it over to custom callback. Returns Proxy.
       .$getA((receiver, prop, value, ...args) => {
-        // append p to body
+      // append p to body
         body.appendChild(inject('p'))
         // getTrapSet: set an object property. Returns Proxy.
           .$setInnerHTML(`${value}:${args[0]}`) // "Hello World!:My Argument"
       }, 'My Argument')
     // getTrapFunc: hands over the receiver to a custom function. Returns Proxy.
       .$func((receiver, ...args) => {
-        // append p to body
+      // append p to body
         body.appendChild(inject('b'))
         // getTrapSet: set an object property. Returns Proxy.
           .$setInnerHTML(receiver.a) // "Hello World!"
@@ -116,7 +116,7 @@ export default class ChainDocs extends MasterExamples {
       .$setB('Hello Galaxy!')
     // getTrapGet: get an object property and hand it over to custom callback. Returns Proxy.
       .$getB((receiver, prop, value, ...args) => {
-        // append p to body
+      // append p to body
         body.appendChild(inject('p'))
         // getTrapSet: set an object property. Returns Proxy.
           .$setInnerHTML(`${value}`) // "Hello Galaxy!"
@@ -125,7 +125,7 @@ export default class ChainDocs extends MasterExamples {
       .$_c('Hello SpaceX!')
     // getTrapGet: get an object property and hand it over to custom callback. Returns Proxy.
       .$getB((receiver, prop, value, ...args) => {
-        // append p to body
+      // append p to body
         body.appendChild(inject('p'))
         // getTrapSet: set an object property. Returns Proxy.
           .$setInnerHTML(`${value}`) // "Hello SpaceX!"

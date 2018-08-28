@@ -9,10 +9,10 @@ export default class TitleDocs extends MasterDocs {
   text () {
     return [
       'Proxify',
-      `import { ProxifyHook } from './JavaScript/Classes/Helper/ProxifyHook.js';<br>
-            import { InitBasic } from './JavaScript/Classes/Controller/InitBasic.js';<br><br>
+      `import { ProxifyHook } from './JavaScript/Classes/Helper/ProxifyHook.js'<br>
+            import { InitBasic } from './JavaScript/Classes/Controller/InitBasic.js'<br><br>
             <span>// InitBasic includes the traps: Events, Html, Css, Subscribe, LocalStorage, WebWorkers, Chain, Proxify</span><br>
-            const __ = new ProxifyHook(InitBasic).get();<br>
+            const __ = new ProxifyHook(InitBasic).get()<br>
             __(document.getElementsByTagName('body')[0])<br>
             ${this.t}.appendChild(__('h1'))<br>
             ${this.t}.$setInnerHTML('Proxify')<br>
@@ -33,7 +33,7 @@ export default class TitleDocs extends MasterDocs {
             ${this.t}${this.t}\`:hover{<br>
             ${this.t}${this.t}${this.t}text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);<br>
             ${this.t}${this.t}}\`<br>
-            ${this.t}], 'h1');`,
+            ${this.t}], 'h1')`,
       `=> Proxify is based on ECMAScript Harmony Proxy. Please, read about 
             <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy" target="_blank">Proxy</a> 
             for base knowledge regarding the mechanics behind Proxify.`

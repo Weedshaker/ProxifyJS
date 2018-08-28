@@ -16,8 +16,8 @@ export default class TryCatchDocs extends MasterExamples {
       `The trap called TryCatch at /JavaScript/Classes/Traps/Misc/TryCatch.js, does catch errors on all object 
             functions called through the Proxy and returns detailed information about the error.`,
       `TryCatch is invoked by simply hooking the trap. Here isn't any more syntax for the moment.`,
-      `import { ProxifyHook } from './JavaScript/Classes/Helper/ProxifyHook.js;<br>
-            import { TryCatch } from './JavaScript/Classes/Traps/Misc/TryCatch.js';<br><br>`,
+      `import { ProxifyHook } from './JavaScript/Classes/Helper/ProxifyHook.js'<br>
+            import { TryCatch } from './JavaScript/Classes/Traps/Misc/TryCatch.js'<br><br>`,
       'Example',
       this.example1,
       `Just, click the button above and look at your console's output!`

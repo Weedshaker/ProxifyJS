@@ -130,12 +130,12 @@ export default class MasterExamples extends MasterDocs {
   }
   regexCodeStr (code) {
     return code
-      .replace(/(\r\n|\r|\n)\s{8}/g, '$1') // remove indentation
+      .replace(/(\r\n|\r|\n)\s{4}/g, '$1') // remove indentation
       .replace(/.*?\(.*?\).*?\{(\r\n|\r|\n)([\s\S]*)\}$/m, '$2') // replace function start and end
       .replace(/\/\/(.*)(\r\n|\r|\n)/g, '<span>//$1</span>\n') // format commands
       .replace(/\/\*([\s\S]*)\*\//gm, '<span>/*$1*/</span>') // format multiline command
       .replace(/\r\n|\r|\n/g, '<br>')
-      .replace(/\t|\s{4}/g, '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;')
+      .replace(/\t|\s{2}/g, '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;')
       .replace(/this\.makeGlobal\('.*?',\s([\s\S]*?)\)\)/gm, '$1)')
       .replace(/receiver\.appendChild\((.*?)\)/gm, 'document.getElementsByTagName(\'body\')[0].appendChild($1)')
       .replace(/inject\(receiver\)/gm, 'inject(document.getElementsByTagName(\'body\')[0])')

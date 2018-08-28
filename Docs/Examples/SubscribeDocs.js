@@ -17,7 +17,7 @@ export default class SubscribeDocs extends MasterExamples {
             different objects. Source automatically pushes designated values on localKey to target (destination[key]). A Dom 
             usecase scenario would be to have a state object, which gets manipulated by the result of your api calls, 
             and directly maps to a DOM nodes content.`,
-      `$subscribe(destination, key, localKey, func = null);
+      `$subscribe(destination, key, localKey, func = null)
             <ul>
                 <li>destination: object = the object which holds the target property</li>
                 <li>key: string = the name of the target property (can be purposefully wrong, incase the default behavior 
@@ -26,15 +26,15 @@ export default class SubscribeDocs extends MasterExamples {
                 <li>[func]: function = a callback, which receives: the newValue and can handle things on its own manually</li>
             </ul>
             => returns the Proxy<br><br><br>
-            $unsubscribe(destination, key, localKey);
+            $unsubscribe(destination, key, localKey)
             <ul>
                 <li>destination: object = the object which holds the target property</li>
                 <li>key: string = the name of the target property</li>
                 <li>localKey: string = the name of the source property</li>
             </ul>
             => returns the Proxy`,
-      `import { ProxifyHook } from './JavaScript/Classes/Helper/ProxifyHook.js;<br>
-            import { Subscribe } from './JavaScript/Classes/Traps/Data/Subscribe.js';<br><br>`,
+      `import { ProxifyHook } from './JavaScript/Classes/Helper/ProxifyHook.js'<br>
+            import { Subscribe } from './JavaScript/Classes/Traps/Data/Subscribe.js'<br><br>`,
       'Example One',
       this.example1,
       `Please, open the console in your developer tools and change the string values of state.a, state.b or state.c!`,

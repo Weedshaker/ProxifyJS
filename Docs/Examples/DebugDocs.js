@@ -14,19 +14,19 @@ export default class DebugDocs extends MasterExamples {
     return [
       'Debug',
       `The trap called Debug at /JavaScript/Classes/Traps/Misc/Debug.js, does spy on object properties and triggers on 'get' and 'set', 
-            the commands "debugger;" and/or "console.log();".`,
-      `$debug(propNames);
+            the commands "debugger" and/or "console.log()".`,
+      `$debug(propNames)
             <ul>
                 <li>propNames: string | Array&lt;string&gt; | 'all' = The properties on which the debugger shall be invoked on.</li>
             </ul>
             => returns the Proxy<br><br><br>
-            $clog(propNames);
+            $clog(propNames)
             <ul>
                 <li>propNames: string | Array&lt;string&gt; | 'all' = The properties, which shall be logged out to the console.</li>
             </ul>
             => returns the Proxy`,
-      `import { ProxifyHook } from './JavaScript/Classes/Helper/ProxifyHook.js;<br>
-            import { Debug } from './JavaScript/Classes/Traps/Misc/Debug.js';<br><br>`,
+      `import { ProxifyHook } from './JavaScript/Classes/Helper/ProxifyHook.js'<br>
+            import { Debug } from './JavaScript/Classes/Traps/Misc/Debug.js'<br><br>`,
       'Example',
       this.example1,
       `Just, click the button above and look at your console's output!`

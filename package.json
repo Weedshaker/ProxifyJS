@@ -1,6 +1,6 @@
 {
   "name": "proxify",
-  "version": "1.0.0",
+  "version": "2.0.1",
   "description": "a pure ES6 api:any - handler library backed by ECMAScript Harmony Proxy. Proxifies any object and goes far beyond...",
   "main": "JavaScript/Classes/Helper/ProxifyHook.js",
   "scripts": {

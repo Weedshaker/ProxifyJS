@@ -15,7 +15,7 @@ export default class CssDocs extends MasterExamples {
       'CSS',
       `The trap called Css at /JavaScript/Classes/Traps/Dom/Css.js, does manage inline style tags for convenience and  
             enables Dom nodes to use pseudo classes.`,
-      `$css(css, id = ["lastUsedId" || node.id || "randomString"]);
+      `$css(css, id = ["lastUsedId" || node.id || "randomString"])
             <ul>
                 <li>css: string | Array&lt;string&gt; | false = CSS styles. Use an empty string to clear the CSS and the 
                 style tag, if no other node uses that style tag. Use false, to reuse an already set style, requires the 
@@ -24,8 +24,8 @@ export default class CssDocs extends MasterExamples {
                 an id will cause it to fallback to the lastUsedId, the node.id or then just applies a randomString.</li>
             </ul>
             => returns the Proxy`,
-      `import { ProxifyHook } from './JavaScript/Classes/Helper/ProxifyHook.js;<br>
-            import { Css } from './JavaScript/Classes/Traps/Dom/Css.js';<br><br>`,
+      `import { ProxifyHook } from './JavaScript/Classes/Helper/ProxifyHook.js'<br>
+            import { Css } from './JavaScript/Classes/Traps/Dom/Css.js'<br><br>`,
       'Example One',
       this.example1,
       `Please, open the console in your developer tools and change p.$css(\`{ ...anything }\`)!`,
@@ -42,10 +42,11 @@ export default class CssDocs extends MasterExamples {
     p.innerHTML = 'Hello World!'
 
     // proxify the object to which the CSS shall be applied
-    this.makeGlobal('p', inject(p).$css(`{
-            color: red;
-            font-weight: bold;
-        }`))
+    this.makeGlobal('p', inject(p)
+      .$css(`{
+        color: red;
+        font-weight: bold;
+      }`))
 
     // append p to body
     receiver.appendChild(p)
@@ -59,15 +60,16 @@ export default class CssDocs extends MasterExamples {
 
     // proxify the object to which the CSS shall be applied and copy the h1 style
     inject(p).$css(false, 'h1')
-    this.makeGlobal('p', inject(p).$css([
-      `{
-                text-align: right;
-            }`,
-      `:hover{
-                background: 0;
-                text-shadow: none;
-            }`
-    ], 'cssDocsExpl2'))
+    this.makeGlobal('p', inject(p)
+      .$css([
+        `{
+          text-align: right;
+        }`,
+        `:hover{
+          background: 0;
+          text-shadow: none;
+        }`
+      ], 'cssDocsExpl2'))
 
     // append p to body
     receiver.appendChild(p)

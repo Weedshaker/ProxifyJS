@@ -15,18 +15,18 @@ export default class HtmlDocs extends MasterExamples {
       'HTML',
       `The trap called Html at /JavaScript/Classes/Traps/Dom/Html.js, does extend DOM commands for managing HTML nodes. At the moment this trap only includes two functions, 
             although this will hopefully increase.`,
-      `$appendChildren(children);
+      `$appendChildren(children)
             <ul>
                 <li>children: Array&lt;Node | Proxy(Node)&gt; = HTMLNodes to be appended.</li>
             </ul>
             => returns the Proxy<br><br><br>
-            $removeChildren(children);
+            $removeChildren(children)
             <ul>
                 <li>children: Array&lt;Node | Proxy(Node)&gt; = HTMLNodes to be removed.</li>
             </ul>
             => returns the Proxy`,
-      `import { ProxifyHook } from './JavaScript/Classes/Helper/ProxifyHook.js;<br>
-            import { Html } from './JavaScript/Classes/Traps/Dom/Html.js';<br><br>`,
+      `import { ProxifyHook } from './JavaScript/Classes/Helper/ProxifyHook.js'<br>
+            import { Html } from './JavaScript/Classes/Traps/Dom/Html.js'<br><br>`,
       'Example',
       this.example1,
       `Please, open the console in your developer tools and inspect the appended div!`

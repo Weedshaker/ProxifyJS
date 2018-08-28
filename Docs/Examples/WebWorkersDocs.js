@@ -17,7 +17,7 @@ export default class WebWorkersDocs extends MasterExamples {
             a Web Worker. It does stringify a function, put it into a Blob and executes it on a separate thread appart from the main Dom thread. 
             Find more information about <a href="https://developer.mozilla.org/en-US/docs/Web/API/Worker" target="_blank">Web Workers</a> 
             and its limitations.`,
-      `$ww + "functionName"(func, ...args = undefined);
+      `$ww + "functionName"(func, ...args = undefined)
             <ul>
                 <li>[func]: function | Array&lt;[function], [scripts]: Array&lt;string&gt;&gt; = simply pass one function as callback. Or pass 
                 an array with [function, [scripts (scripts to be imported to the Web Workers namespace)]]. The callback receives: 
@@ -26,8 +26,8 @@ export default class WebWorkersDocs extends MasterExamples {
             </ul>
             => returns the Proxy, if a callback function is passed in. Else, it will return a promise, which gets resolved with the result from 
             the Web Worker.`,
-      `import { ProxifyHook } from './JavaScript/Classes/Helper/ProxifyHook.js;<br>
-            import { WebWorkers } from './JavaScript/Classes/Traps/Misc/WebWorkers.js';<br><br>`,
+      `import { ProxifyHook } from './JavaScript/Classes/Helper/ProxifyHook.js'<br>
+            import { WebWorkers } from './JavaScript/Classes/Traps/Misc/WebWorkers.js'<br><br>`,
       'Example One',
       this.example1,
       `Just, click the buttons above and wait for the alert with the result! You can also open the console in your developer tools 

@@ -16,8 +16,8 @@ export default class TypesDocs extends MasterExamples {
       `The trap called Types at /JavaScript/Classes/Traps/Misc/Types.js, does spy on all object properties and gets 
             triggered, when a value gets replaced with a different type than the old type was.`,
       `Types checking is invoked by simply hooking the trap. Here isn't any more syntax for the moment.`,
-      `import { ProxifyHook } from './JavaScript/Classes/Helper/ProxifyHook.js;<br>
-            import { Types } from './JavaScript/Classes/Traps/Misc/Types.js';<br><br>`,
+      `import { ProxifyHook } from './JavaScript/Classes/Helper/ProxifyHook.js'<br>
+            import { Types } from './JavaScript/Classes/Traps/Misc/Types.js'<br><br>`,
       'Example',
       this.example1,
       `Just, click the button above and look at your console's output!`

@@ -15,24 +15,24 @@ export default class TrapsDocs extends MasterDocs {
             not to have a trap at the center of your assembling, which only requires Master, when further out traps require Proxify! 
             Each trap extends the trap passed to it...<br><br>
             Get started by creating a hook and hand it your desired trap collection:`,
-      `// The hook serves a function which will be able to Proxify objects (including classes)<br>
-            import { ProxifyHook } from './JavaScript/Classes/Helper/ProxifyHook.js;<br><br>
-            // The Proxify Handler is responsible to inject proxies into any objects you interact with.<br>
-            import { Proxify } from './JavaScript/Classes/Handler/Proxify.js';<br><br>
-            // Traps<br>
-            import { Chain } from './JavaScript/Classes/Traps/Misc/Chain.js';<br>
-            import { WebWorkers } from './JavaScript/Classes/Traps/Misc/WebWorkers.js';<br>
-            import { LocalStorage } from './JavaScript/Classes/Traps/Data/LocalStorage.js';<br>
-            import { Subscribe } from './JavaScript/Classes/Traps/Data/Subscribe.js';<br>
-            import { Css } from './JavaScript/Classes/Traps/Dom/Css.js';<br>
-            import { Html } from './JavaScript/Classes/Traps/Dom/Html.js';<br>
-            import { Events } from './JavaScript/Classes/Traps/Dom/Events.js';<br><br>
-            const inject = new ProxifyHook(Events(Html(Css(Subscribe(LocalStorage(WebWorkers(Chain(Proxify())))))))).get();`,
+      `<span>// The hook serves a function which will be able to Proxify objects (including classes)</span><br>
+            import { ProxifyHook } from './JavaScript/Classes/Helper/ProxifyHook.js'<br><br>
+            <span>// The Proxify Handler is responsible to inject proxies into any objects you interact with.</span><br>
+            import { Proxify } from './JavaScript/Classes/Handler/Proxify.js'<br><br>
+            <span>// Traps</span><br>
+            import { Chain } from './JavaScript/Classes/Traps/Misc/Chain.js'<br>
+            import { WebWorkers } from './JavaScript/Classes/Traps/Misc/WebWorkers.js'<br>
+            import { LocalStorage } from './JavaScript/Classes/Traps/Data/LocalStorage.js'<br>
+            import { Subscribe } from './JavaScript/Classes/Traps/Data/Subscribe.js'<br>
+            import { Css } from './JavaScript/Classes/Traps/Dom/Css.js'<br>
+            import { Html } from './JavaScript/Classes/Traps/Dom/Html.js'<br>
+            import { Events } from './JavaScript/Classes/Traps/Dom/Events.js'<br><br>
+            const inject = new ProxifyHook(Events(Html(Css(Subscribe(LocalStorage(WebWorkers(Chain(Proxify())))))))).get()`,
       `Or simply use the preset collection called InitBasic:`,
-      `import { ProxifyHook } from './JavaScript/Classes/Helper/ProxifyHook.js;<br><br>
-            // Includes traps: Events, Html, Css, Subscribe, LocalStorage, WebWorkers, Chain, Proxify<br>
-            import { InitBasic } from './JavaScript/Classes/Controller/InitBasic.js';<br><br>
-            const inject = new ProxifyHook(InitBasic).get();`,
+      `import { ProxifyHook } from './JavaScript/Classes/Helper/ProxifyHook.js'<br><br>
+            <span>// Includes traps: Events, Html, Css, Subscribe, LocalStorage, WebWorkers, Chain, Proxify</span><br>
+            import { InitBasic } from './JavaScript/Classes/Controller/InitBasic.js'<br><br>
+            const inject = new ProxifyHook(InitBasic).get()`,
       `<span>This example page is completely driven by Proxify. You can see on how it works by looking at the source files of 
             the "Docs" folder + index.html.</span>`
     ]

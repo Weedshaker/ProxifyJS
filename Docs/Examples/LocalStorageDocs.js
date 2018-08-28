@@ -17,18 +17,18 @@ export default class LocalStorageDocs extends MasterExamples {
             object doesn't need to posses such property but will still get and set, from and to, localStorage. If the object does posses a value on a localStorage property, 
             it would fallback to it, incase the localStorage does return a falsy value... Please, have a look at the limitations of <a href="https://developer.mozilla.org/en-US/docs/Web/API/Storage/LocalStorage" target="_blank">localStorage</a>, 
             especially the way it stores its values as UTF-16 DOMStrings.`,
-      `$lStoreAdd(prop);
+      `$lStoreAdd(prop)
             <ul>
                 <li>prop: string | 'all' = The property which the localStorage shall mock.</li>
             </ul>
             => returns the Proxy<br><br><br>
-            $lStoreRemove(prop);
+            $lStoreRemove(prop)
             <ul>
                 <li>prop: string = The property which the localStorage shall stop mocking.</li>
             </ul>
             => returns the Proxy`,
-      `import { ProxifyHook } from './JavaScript/Classes/Helper/ProxifyHook.js;<br>
-            import { LocalStorage } from './JavaScript/Classes/Traps/Data/LocalStorage.js';<br><br>`,
+      `import { ProxifyHook } from './JavaScript/Classes/Helper/ProxifyHook.js'<br>
+            import { LocalStorage } from './JavaScript/Classes/Traps/Data/LocalStorage.js'<br><br>`,
       'Example',
       this.example1,
       `Please, open the console in your developer tools and inspect lsStateRaw. Also, navigate to the Storage tab, open Local Storage and "get" and "set" values on lsState!`
