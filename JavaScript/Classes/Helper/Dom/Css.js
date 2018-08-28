@@ -6,9 +6,12 @@ export class Css {
     // means it just grabs the last added style or falls back to el id || randomString
     return ids.length && ids.slice(-1)[0] !== undefined ? ids.slice(-1)[0].replace(`${idName}-`, '') : receiver.getAttribute('id') || this.getRandomString()
   }
-  getStyle (style, head, idName, id) {
+  getContainer (containerIdName) {
+    return document.getElementById(containerIdName) ? document.getElementById(containerIdName) : document.getElementsByTagName('head')[0]
+  }
+  getStyle (style, container, idName, id) {
     if (style) return style
-    style = head.appendChild(document.createElement('style'))
+    style = container.appendChild(document.createElement('style'))
     style.setAttribute('type', 'text/css')
     style.setAttribute(idName, id)
     return style

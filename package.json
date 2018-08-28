@@ -4,7 +4,7 @@
   "description": "a pure ES6 api:any - handler library backed by ECMAScript Harmony Proxy. Proxifies any object and goes far beyond...",
   "main": "JavaScript/Classes/Helper/ProxifyHook.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "standard --fix"
   },
   "repository": {
     "type": "git",
@@ -35,8 +35,5 @@
   "homepage": "https://weedshaker.github.io/Proxify/",
   "devDependencies": {
     "standard": "*"
-  },
-  "scripts": {
-    "test": "standard --fix"
   }
 }

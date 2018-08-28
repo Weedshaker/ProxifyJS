@@ -16,10 +16,11 @@ export const Css = (Root = Proxify()) => class Css extends Root {
         // setup
         const idName = 'css-id'
         id = this.CssHelper.getId(receiver, idName, id)
-        const head = document.getElementsByTagName('head')[0]
-        let style = head.querySelector(`[${idName}="${id}"]`)
+        const containerIdName = 'css-container'
+        const container = this.CssHelper.getContainer(containerIdName)
+        let style = container.querySelector(`[${idName}="${id}"]`)
         if (css !== '') {
-          style = this.CssHelper.getStyle(style, head, idName, id)
+          style = this.CssHelper.getStyle(style, container, idName, id)
           let formatedCss = ''
           if (/\{.|\r|\n*\}$/.test(css) && (formatedCss = this.CssHelper.getCssFormatted(`${idName}-${id}`, css)) !== style.innerHTML) style.innerHTML = formatedCss
           if (!receiver.classList.contains(`${idName}-${id}`)) receiver.classList.add(`${idName}-${id}`)

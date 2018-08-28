@@ -14,7 +14,7 @@ export default class CssDocs extends MasterExamples {
     return [
       'CSS',
       `The trap called Css at /JavaScript/Classes/Traps/Dom/Css.js, does manage inline style tags for convenience and  
-            enables Dom nodes to use pseudo classes.`,
+            enables Dom nodes to use pseudo classes, etc.<br><br>Note: By default the styles will be appended to the head. Although, if you have an element with the id="css-container", it will use that container.`,
       `$css(css, id = ["lastUsedId" || node.id || "randomString"])
             <ul>
                 <li>css: string | Array&lt;string&gt; | false = CSS styles. Use an empty string to clear the CSS and the 
