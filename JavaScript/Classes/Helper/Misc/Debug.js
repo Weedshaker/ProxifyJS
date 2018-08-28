@@ -1,6 +1,6 @@
 export class Debug {
-    constructor() {
-        this.debugArr = [];
-        this.clogArr = [];
-    }
+  constructor () {
+    this.debugArr = []
+    this.clogArr = []
+  }
 }

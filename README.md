@@ -16,10 +16,10 @@ npm install Weedshaker/Proxify
 ## Usage
 
 ```js
-import { ProxifyHook } from './JavaScript/Classes/Helper/ProxifyHook.js';
-import { InitBasic } from './JavaScript/Classes/Controller/InitBasic.js';
+import { ProxifyHook } from './JavaScript/Classes/Helper/ProxifyHook.js'
+import { InitBasic } from './JavaScript/Classes/Controller/InitBasic.js'
 
-const __ = new ProxifyHook(InitBasic).get();
+const __ = new ProxifyHook(InitBasic).get()
 
 __(document.getElementsByTagName('body')[0]).$appendChildren(
     [
@@ -51,7 +51,7 @@ __(document.getElementsByTagName('body')[0]).$appendChildren(
                 margin: 10px 0;
             }`, 'hr')
     ]
-);
+)
 ```
 
 The short snippet above merely gives a glimpse on what Proxify can do.

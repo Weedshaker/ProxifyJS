@@ -1,14 +1,15 @@
-import MasterDocs from './MasterDocs.js';
+/* global __ */
+import MasterDocs from './MasterDocs.js'
 
 export default class WhyDocs extends MasterDocs {
-    constructor() {
-        super();
-        return this.html(__('div'), ...this.text());
-    }
-    text() {
-        return [
-            'Why?',
-            `In general my client work includes frameworks like react, angular, etc. I like parts of those frameworks, eg.
+  constructor () {
+    super()
+    return this.html(__('div'), ...this.text())
+  }
+  text () {
+    return [
+      'Why?',
+      `In general my client work includes frameworks like react, angular, etc. I like parts of those frameworks, eg.
             components. But I also love the MVC pattern simply utilizing ES6 classes. All the scenarios of those frameworks can be 
             covered with vanilla ES6, even though something is missing to conveniently interact with HTML nodes. This can be tackled 
             in a none intrusive manner using Proxify.<br><br>
@@ -22,24 +23,24 @@ export default class WhyDocs extends MasterDocs {
             mainly deals with the DOM api. But anything is possible with Proxies!<br><br>
             This repo should be an inspiration to write more traps for numerous use cases.<br>
             <span>I would be very happy to get a lot of PR's!</span>`
-        ];
-    }
-    html(el, ...args) {
-        const [title, text] = args;
-        return el.appendChild(__('h2'))
-            .$setInnerHTML(title)
-            .$css(false, 'h2')
-        .parentElement
-        .appendChild(__('p'))
-            .$setInnerHTML(text)
-            .$css(false, 'p')
-            .$func((receiver, ...args) => {
-                const spanTag = receiver.getElementsByTagName('span')[0];
-                spanTag.$css(false, 'note');
-            })
-        .parentElement
-        .appendChild(__('hr'))
-            .$css(false, 'hr')
-        .parentElement;
-    }
+    ]
+  }
+  html (el, ...args) {
+    const [title, text] = args
+    return el.appendChild(__('h2'))
+      .$setInnerHTML(title)
+      .$css(false, 'h2')
+      .parentElement
+      .appendChild(__('p'))
+      .$setInnerHTML(text)
+      .$css(false, 'p')
+      .$func((receiver, ...args) => {
+        const spanTag = receiver.getElementsByTagName('span')[0]
+        spanTag.$css(false, 'note')
+      })
+      .parentElement
+      .appendChild(__('hr'))
+      .$css(false, 'hr')
+      .parentElement
+  }
 }

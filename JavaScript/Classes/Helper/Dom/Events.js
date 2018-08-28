@@ -1,5 +1,5 @@
 export class Events {
-    constructor() {
-        this.events = new Map();
-    }
+  constructor () {
+    this.events = new Map()
+  }
 }
