@@ -26,6 +26,10 @@ export class Css {
     }
   }
   getCssFormatted (className, css) {
-    return Array.isArray(css) ? `.${className}${css.reduce((acc, curr) => acc + `.${className}${curr}`)}` : `.${className}${css}`
+    if (!Array.isArray(css)) css = [css]
+    return css.reduce((acc, curr) => {
+      const regex = /(.*?)(\{)/
+      return acc + curr.replace(regex, `${curr.match(regex)[1].split(',').reduce((acc, curr, i, arr) => acc + `.${className}${curr}${i < arr.length - 1 ? ',' : ''}`, '')}$2`)
+    }, '')
   }
 }
