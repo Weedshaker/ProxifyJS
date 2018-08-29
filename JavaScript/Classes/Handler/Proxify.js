@@ -1,7 +1,7 @@
 // !!!This contains an overwrite and should be placed as low as possible!!! See: Classes->Controller->Init.js
 
 import { Master } from './Master.js'
-import {Proxify as ProxifyHelper} from '../Helper/Handler/Proxify.js'
+import { Proxify as ProxifyHelper } from '../Helper/Handler/Proxify.js'
 
 // Proxify Terminology vs MDN: Raw = Target
 // ConvertTo attaches the proxy to the raw object and also returns the raw object when called prop this.targetRef on proxy
@@ -38,6 +38,12 @@ export const Proxify = (Root = Master()) => class Proxify extends Root {
     this.trap_get_none.push(getTrapRaw)
   }
   // !!!Handler Class overwrite!!!*********************************
+  getOwnPropertyDescriptor(target, prop) {
+    if (prop === this.proxyRef) return undefined // used for "for"-loops, avoid giving the __proxy__ reference
+    let result
+    if (this.trap_getOwnPropertyDescriptor.some(func => (result = func(...arguments)))) return result
+    return Reflect.getOwnPropertyDescriptor(...arguments)
+  }
   get (target, prop, receiver) {
     let result
     // for performance reason; existing props and none existing props get handled in different arrays

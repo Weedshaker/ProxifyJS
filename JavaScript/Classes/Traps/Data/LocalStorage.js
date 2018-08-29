@@ -13,12 +13,13 @@ export const LocalStorage = (Root = Master()) => class LocalStorage extends Root
     // Traps for get*************************************************
     const getTrapAdd = (target, prop, receiver) => {
       if (prop !== '$lStoreAdd') return false
-      return (prop) => {
-        this.LocalStorageHelper.storeArr.push(prop)
+      return (prop, key) => {
+        if (this.LocalStorageHelper.storeArr.indexOf(prop) === -1) this.LocalStorageHelper.storeArr.push(prop)
+        if (key) this.LocalStorageHelper.getKey(target, key)
         return receiver
       }
     }
-    const getTrapeRemove = (target, prop, receiver) => {
+    const getTrapRemove = (target, prop, receiver) => {
       if (prop !== '$lStoreRemove') return false
       return (prop) => {
         // eliminate any doublicated values
@@ -34,7 +35,7 @@ export const LocalStorage = (Root = Master()) => class LocalStorage extends Root
       return this.LocalStorageHelper.get(prop, target) // returns null and continues the default behavior
     }
 
-    this.trap_get_none = this.trap_get_none.concat([getTrapAdd, getTrapeRemove, getTrapGet])
+    this.trap_get_none = this.trap_get_none.concat([getTrapAdd, getTrapRemove, getTrapGet])
     this.trap_get = this.trap_get.concat([getTrapGet])
 
     // Traps for set*************************************************
@@ -45,10 +46,19 @@ export const LocalStorage = (Root = Master()) => class LocalStorage extends Root
     }
 
     this.trap_set = this.trap_set.concat([setTrapSet])
+
+    // Traps for getOwnPropertyDescriptor, Used for loops*************************************************
+    const getOwnPropertyDescriptorTrap = (target, prop) => {
+      let value;
+      if (prop in target || (!(value = this.LocalStorageHelper.get(prop, target)) && !this.LocalStorageHelper.storeArr.includes(prop))) return false
+      return { value, writable: true, enumerable: true, configurable: true }
+    }
+
+    this.trap_getOwnPropertyDescriptor = this.trap_getOwnPropertyDescriptor.concat([getOwnPropertyDescriptorTrap])
   }
   // Handler Class ext*********************************************
   ownKeys (target) {
     // get possible keys
-    return super.ownKeys(...arguments).concat(['$lStoreAdd', '$lStoreRemove'].concat(this.LocalStorageHelper.storeArr.filter(prop => !(prop in target))))
+    return super.ownKeys(...arguments).concat(['$lStoreAdd', '$lStoreRemove'].concat([...new Set((JSON.parse(this.LocalStorageHelper.get('keys', target)) || []).concat(this.LocalStorageHelper.storeArr.filter(prop => !(prop in target) && prop !== 'all')))]))
   }
 }

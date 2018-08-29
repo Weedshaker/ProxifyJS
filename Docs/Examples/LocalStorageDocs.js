@@ -20,6 +20,7 @@ export default class LocalStorageDocs extends MasterExamples {
       `$lStoreAdd(prop)
             <ul>
                 <li>prop: string | 'all' = The property which the localStorage shall mock.</li>
+                <li>[key]: string = A key to additionally, uniquely identify at localStorage. Can only be set at first init.</li>
             </ul>
             => returns the Proxy<br><br><br>
             $lStoreRemove(prop)
@@ -44,7 +45,7 @@ export default class LocalStorageDocs extends MasterExamples {
     }))
 
     // serve property "a" from localStorage or fallback to objects value
-    lsState.$lStoreAdd('a')
+    lsState.$lStoreAdd('a', 'LocalStorageDocs')
     let p = receiver.appendChild(document.createElement('p'))
     // no value on localStorage => falls back to lsState.a
     p.innerHTML = lsState.a // on first run or after clearing the localStorage: "Hello value from Object!" else "Hello localStorage"

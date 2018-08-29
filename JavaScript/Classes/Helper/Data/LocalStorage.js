@@ -9,11 +9,12 @@ export class LocalStorage {
     return localStorage.getItem(`${this.getKey(target)}:${prop}`)
   }
   set (prop, value, target) {
+    if (this.storeArr.includes('all') && !(prop in target)) localStorage.setItem(`${this.getKey(target)}:keys`, JSON.stringify([...new Set((JSON.parse(localStorage.getItem(`${this.getKey(target)}:keys`)) || []).concat([prop]))]))
     localStorage.setItem(`${this.getKey(target)}:${prop}`, value)
   }
-  getKey (target) {
+  getKey (target, key) {
     // TODO: Please, let me know, if you find a better way to get a unique key of an object without using values, timestamps and all the stuff which doesn't work in this scenario. THX!
-    if (!this._key) this._key = this.getHash(`${target.constructor.name}:${target.constructor.toLocaleString()}:${JSON.stringify(Object.keys(target))}`)
+    if (!this._key) this._key = this.getHash(`${key}:${target.constructor.name}:${target.constructor.toLocaleString()}:${JSON.stringify(Object.keys(target))}`)
     return this._key
   }
   getHash (str) {
