@@ -8,9 +8,18 @@ export class LocalStorage {
   get (prop, target) {
     return localStorage.getItem(`${this.getKey(target)}:${prop}`)
   }
-  set (prop, value, target) {
-    if (this.storeArr.includes('all') && !(prop in target)) localStorage.setItem(`${this.getKey(target)}:keys`, JSON.stringify([...new Set((JSON.parse(localStorage.getItem(`${this.getKey(target)}:keys`)) || []).concat([prop]))]))
+  set (prop, value, target, addToKeys = true) {
+    if (addToKeys && this.storeArr.includes('all') && !(prop in target)) localStorage.setItem(`${this.getKey(target)}:keys`, JSON.stringify([...new Set((JSON.parse(this.get('keys', target)) || []).concat([prop]))]))
     localStorage.setItem(`${this.getKey(target)}:${prop}`, value)
+  }
+  delete (prop, target) {
+    localStorage.removeItem(`${this.getKey(target)}:${prop}`)
+    const keys = JSON.parse(this.get('keys', target)) || []
+    let index = keys.indexOf(prop)
+    if (index !== -1) {
+      keys.splice(index, 1)
+      this.set('keys', JSON.stringify(keys), target, false)
+    }
   }
   getKey (target, key) {
     // TODO: Please, let me know, if you find a better way to get a unique key of an object without using values, timestamps and all the stuff which doesn't work in this scenario. THX!

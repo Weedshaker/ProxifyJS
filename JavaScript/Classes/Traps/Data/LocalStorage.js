@@ -57,6 +57,10 @@ export const LocalStorage = (Root = Master()) => class LocalStorage extends Root
     this.trap_getOwnPropertyDescriptor = this.trap_getOwnPropertyDescriptor.concat([getOwnPropertyDescriptorTrap])
   }
   // Handler Class ext*********************************************
+  deleteProperty (target, prop) {
+    this.LocalStorageHelper.delete(prop, target)
+    return super.deleteProperty(...arguments)
+  }
   ownKeys (target) {
     // get possible keys
     return super.ownKeys(...arguments).concat(['$lStoreAdd', '$lStoreRemove'].concat([...new Set((JSON.parse(this.LocalStorageHelper.get('keys', target)) || []).concat(this.LocalStorageHelper.storeArr.filter(prop => !(prop in target) && prop !== 'all')))]))
