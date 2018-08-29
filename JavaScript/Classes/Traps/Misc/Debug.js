@@ -30,12 +30,12 @@ export const Debug = (Root = Master()) => class Debug extends Root {
   // Handler Class ext*********************************************
   get (target, prop, receiver) {
     if (this.DebugHelper.debugArr.includes(prop) || this.DebugHelper.debugArr.includes('all')) debugger// eslint-disable-line
-    if (this.DebugHelper.clogArr.includes(prop) || this.DebugHelper.clogArr.includes('all')) console.log('$clog->getProp', {target, prop, receiver})
+    if (this.DebugHelper.clogArr.includes(prop) || this.DebugHelper.clogArr.includes('all')) console.log('$clog->getProp', { target, prop, receiver })
     return super.get(...arguments)
   }
   set (target, prop, value, receiver) {
     if (this.DebugHelper.debugArr.includes(prop) || this.DebugHelper.debugArr.includes('all')) debugger// eslint-disable-line
-    if (this.DebugHelper.clogArr.includes(prop) || this.DebugHelper.clogArr.includes('all')) console.log('$clog->setProp', {target, prop, oldValue: target[prop], newValue: value, receiver})
+    if (this.DebugHelper.clogArr.includes(prop) || this.DebugHelper.clogArr.includes('all')) console.log('$clog->setProp', { target, prop, oldValue: target[prop], newValue: value, receiver })
     return super.set(...arguments)
   }
   ownKeys (target) {
