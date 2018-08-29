@@ -49,7 +49,7 @@ export const LocalStorage = (Root = Master()) => class LocalStorage extends Root
 
     // Traps for getOwnPropertyDescriptor, Used for loops*************************************************
     const getOwnPropertyDescriptorTrap = (target, prop) => {
-      let value;
+      let value
       if (prop in target || (!(value = this.LocalStorageHelper.get(prop, target)) && !this.LocalStorageHelper.storeArr.includes(prop))) return false
       return { value, writable: true, enumerable: true, configurable: true }
     }

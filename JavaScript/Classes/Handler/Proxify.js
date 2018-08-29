@@ -38,7 +38,7 @@ export const Proxify = (Root = Master()) => class Proxify extends Root {
     this.trap_get_none.push(getTrapRaw)
   }
   // !!!Handler Class overwrite!!!*********************************
-  getOwnPropertyDescriptor(target, prop) {
+  getOwnPropertyDescriptor (target, prop) {
     if (prop === this.proxyRef) return undefined // used for "for"-loops, avoid giving the __proxy__ reference
     let result
     if (this.trap_getOwnPropertyDescriptor.some(func => (result = func(...arguments)))) return result
