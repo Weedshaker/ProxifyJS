@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Weedshaker/Proxify.git"
+    "url": "git+https://github.com/Weedshaker/ProxifyJS.git"
   },
   "keywords": [
     "ECMAScript Harmony Proxy",
@@ -30,9 +30,9 @@
   "author": "Silvan Strübi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Weedshaker/Proxify/issues"
+    "url": "https://github.com/Weedshaker/ProxifyJS/issues"
   },
-  "homepage": "https://weedshaker.github.io/Proxify/",
+  "homepage": "https://weedshaker.github.io/ProxifyJS/",
   "devDependencies": {
     "standard": "*"
   }
