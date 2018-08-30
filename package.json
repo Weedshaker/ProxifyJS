@@ -1,5 +1,5 @@
 {
-  "name": "proxifyjs",
+  "name": "@weedshaker/proxifyjs",
   "version": "2.0.3",
   "description": "a pure ES6 api:any - handler library backed by ECMAScript Harmony Proxy. Proxifies any object and goes far beyond...",
   "main": "JavaScript/Classes/Helper/ProxifyHook.js",
