@@ -12,10 +12,10 @@ export default class WhyDocs extends MasterDocs {
       `In general my client work includes frameworks like react, angular, etc. I like parts of those frameworks, eg.
             components. But I also love the MVC pattern simply utilizing ES6 classes. All the scenarios of those frameworks can be 
             covered with vanilla ES6, even though something is missing to conveniently interact with HTML nodes. This can be tackled 
-            in a none intrusive manner using Proxify.<br><br>
+            in a none intrusive manner using ProxifyJS.<br><br>
             A Proxy can be swiftly assembled with the needed functions (traps) without any 
             overhead nor dependencies and the program is free to escape the Proxy by using __raw__ or reenter by __proxy__ at anytime. Means it never 
-            forces a pattern upon you and your program. The same is true for installing Proxify. Use ECMAScript 2015 import statements, 
+            forces a pattern upon you and your program. The same is true for installing ProxifyJS. Use ECMAScript 2015 import statements, 
             which works with and without bundlers like webpack, etc. No compiling needed!!!<br><br>
             There are many ways for Proxy-Techniques to be applied to your problem. I think the traps, so far in this repo, just scratch the 
             surface of what is possible. Although, I got a few examples below, which go beyond the usual scenario of using

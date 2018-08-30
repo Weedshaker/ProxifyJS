@@ -33,7 +33,7 @@ export default class TrapsDocs extends MasterDocs {
             <span>// Includes traps: Events, Html, Css, Subscribe, LocalStorage, WebWorkers, Chain, Proxify</span><br>
             import { InitBasic } from './JavaScript/Classes/Controller/InitBasic.js'<br><br>
             const inject = new ProxifyHook(InitBasic).get()`,
-      `<span>This example page is completely driven by Proxify. You can see on how it works by looking at the source files of 
+      `<span>This example page is completely driven by ProxifyJS. You can see on how it works by looking at the source files of 
             the "Docs" folder + index.html.</span>`
     ]
   }

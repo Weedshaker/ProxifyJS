@@ -1,7 +1,7 @@
 <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
 <p align="center">
   <img src="https://farm4.staticflickr.com/3917/14978448715_d060fe9949_k.jpg" width="400" height="200" alt="proxify">
-  <h1 align="center">Proxify</h1>
+  <h1 align="center">ProxifyJS</h1>
 </p>
 A pure ES6 api:any - handler library backed by ECMAScript Harmony Proxy. Proxifies any object and goes far beyond...
 
@@ -10,7 +10,7 @@ A pure ES6 api:any - handler library backed by ECMAScript Harmony Proxy. Proxifi
 ## Installation
 
 ```js
-npm install Weedshaker/Proxify
+npm install Weedshaker/ProxifyJS
 ```
 
 ## Usage
@@ -24,7 +24,7 @@ const __ = new ProxifyHook(InitBasic).get()
 __(document.getElementsByTagName('body')[0]).$appendChildren(
     [
         __('h2')
-            .$setInnerHTML('Proxify')
+            .$setInnerHTML('ProxifyJS')
             .$css(
             `{
                 color: darkgrey;
@@ -54,8 +54,8 @@ __(document.getElementsByTagName('body')[0]).$appendChildren(
 )
 ```
 
-The short snippet above merely gives a glimpse on what Proxify can do.
+The short snippet above merely gives a glimpse on what ProxifyJS can do.
 
 Easily, deal not only with Web APIs but any API. Here a few tags: Events, Html, Css, Subscribe, LocalStorage, WebWorkers, Method Chaining, Error Handling, Types, Debugging, ∞. All modular, lightweight and simple thanks to the power of Proxies.
 
-- [Documentation, Examples & More Information](https://weedshaker.github.io/Proxify/)
+- [Documentation, Examples & More Information](https://weedshaker.github.io/ProxifyJS/)

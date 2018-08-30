@@ -8,14 +8,14 @@ export default class TitleDocs extends MasterDocs {
   }
   text () {
     return [
-      'Proxify',
+      'ProxifyJS',
       `import { ProxifyHook } from './JavaScript/Classes/Helper/ProxifyHook.js'<br>
             import { InitBasic } from './JavaScript/Classes/Controller/InitBasic.js'<br><br>
             <span>// InitBasic includes the traps: Events, Html, Css, Subscribe, LocalStorage, WebWorkers, Chain, Proxify</span><br>
             const __ = new ProxifyHook(InitBasic).get()<br>
             __(document.getElementsByTagName('body')[0])<br>
             ${this.t}.appendChild(__('h1'))<br>
-            ${this.t}.$setInnerHTML('Proxify')<br>
+            ${this.t}.$setInnerHTML('ProxifyJS')<br>
             ${this.t}.$css([<br>
             ${this.t}${this.t}\`{<br>
             ${this.t}${this.t}${this.t}background: -moz-linear-gradient(top, rgba(0, 1, 37, 0.65) 0%, rgba(0, 247, 255, 0) 100%);<br>
@@ -34,16 +34,16 @@ export default class TitleDocs extends MasterDocs {
             ${this.t}${this.t}${this.t}text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);<br>
             ${this.t}${this.t}}\`<br>
             ${this.t}], 'h1')`,
-      `=> Proxify is based on ECMAScript Harmony Proxy. Please, read about 
+      `=> ProxifyJS is based on ECMAScript Harmony Proxy. Please, read about 
             <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy" target="_blank">Proxy</a> 
-            for base knowledge regarding the mechanics behind Proxify.`
+            for base knowledge regarding the mechanics behind ProxifyJS.`
     ]
   }
   html (el, ...args) {
     const [title, code, note] = args
     return el.$appendChildren([
       __('h1')
-        .$setInnerHTML(`<a href="https://github.com/Weedshaker/Proxify" target="_blank">${title}</a>`)
+        .$setInnerHTML(`<a href="https://github.com/Weedshaker/ProxifyJS" target="_blank">${title}</a>`)
         .$css([
           `{
                         /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000125+0,00f7ff+100&0.65+0,0+100 */
