@@ -31,6 +31,7 @@ export class Css {
   getCssFormatted (className, css) {
     if (!Array.isArray(css)) css = [css]
     return css.reduce((acc, curr) => {
+      if (!curr) return acc
       const regex = /(.*?)(\{)/
       return acc + curr.replace(regex, `${curr.match(regex)[1].split(',').reduce((acc, curr, i, arr) => acc + `.${className}${curr}${i < arr.length - 1 ? ',' : ''}`, '')}$2`)
     }, '')
