@@ -59,3 +59,4 @@ The short snippet above merely gives a glimpse on what ProxifyJS can do.
 Easily, deal not only with Web APIs but any API. Here a few tags: Events, Html, Css, Subscribe, LocalStorage, WebWorkers, Method Chaining, Error Handling, Types, Debugging, ∞. All modular, lightweight and simple thanks to the power of Proxies.
 
 - [Documentation, Examples & More Information](https://weedshaker.github.io/ProxifyJS/)
+- [Tutorials](https://github.com/Weedshaker/ProxifyJS_Tutorials/)
