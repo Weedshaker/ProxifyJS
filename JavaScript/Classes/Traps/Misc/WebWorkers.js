@@ -12,7 +12,7 @@ export const WebWorkers = (Root = Master()) => class WebWorkers extends Root {
     // Traps for get*************************************************
     // make any function on target be run within WebWorkers
     const getTrapWebWorkers = (target, prop, receiver) => {
-      if (!/^\$ww/.test(prop) || !((prop = prop.charAt(3).toLowerCase() + prop.slice(4)) in target)) return false
+      if (typeof prop !== 'string' || !/^\$ww/.test(prop) || !((prop = prop.charAt(3).toLowerCase() + prop.slice(4)) in target)) return false
       return (func, ...args) => {
         let scripts = false
         if (Array.isArray(func) && func.length === 2) [func, scripts] = func

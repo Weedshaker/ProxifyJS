@@ -11,7 +11,7 @@ export const Events = (Root = Proxify()) => class Events extends Root {
 
     // Traps for get*************************************************
     const getTrapEventOn = (target, prop, receiver) => {
-      if (!/^\$on[a-z]{1}[a-z]*?$/.test(prop) || !((prop = prop.slice(1)) in target)) return false
+      if (typeof prop !== 'string' || !/^\$on[a-z]{1}[a-z]*?$/.test(prop) || !((prop = prop.slice(1)) in target)) return false
       return (funcArr, command = 'push') => {
         if (!Array.isArray(funcArr)) {
           funcArr = [funcArr, {}]

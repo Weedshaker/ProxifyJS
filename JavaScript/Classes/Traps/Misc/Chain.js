@@ -8,7 +8,7 @@ export const Chain = (Root = Proxify()) => class Chain extends Root {
     // Traps for get*************************************************
     const getTrapGet = (target, prop, receiver) => {
       // if (!/^\$get/.test(prop) || !((prop = prop.charAt(4).toLowerCase() + prop.slice(5)) in target)) return false;
-      if (!/^\$get/.test(prop)) return false
+      if (typeof prop !== 'string' || !/^\$get/.test(prop)) return false
       prop = prop.charAt(4).toLowerCase() + prop.slice(5)
       return (func, ...args) => {
         // escape functions and simply execute those, get is meant for properties
@@ -20,7 +20,7 @@ export const Chain = (Root = Proxify()) => class Chain extends Root {
     }
     const getTrapSet = (target, prop, receiver) => {
       // if (!/^\$set/.test(prop) || !((prop = prop.charAt(4).toLowerCase() + prop.slice(5)) in target)) return false;
-      if (!/^\$set/.test(prop)) return false
+      if (typeof prop !== 'string' || !/^\$set/.test(prop)) return false
       prop = prop.charAt(4).toLowerCase() + prop.slice(5)
       return (...args) => {
         // escape functions and simply execute those, set is meant for properties
@@ -39,7 +39,7 @@ export const Chain = (Root = Proxify()) => class Chain extends Root {
     }
     // make any function on target return the proxy
     const getTrap_ = (target, prop, receiver) => {
-      if (!/^\$_/.test(prop) || !((prop = prop.charAt(2).toLowerCase() + prop.slice(3)) in target)) return false
+      if (typeof prop !== 'string' || !/^\$_/.test(prop) || !((prop = prop.charAt(2).toLowerCase() + prop.slice(3)) in target)) return false
       return (...args) => receiver[prop](...args, '__returnReceiver__')
     }
 
