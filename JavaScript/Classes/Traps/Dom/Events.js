@@ -18,7 +18,7 @@ export const Events = (Root = Proxify()) => class Events extends Root {
         } else if (!funcArr[1]) {
           funcArr[1] = {}
         }
-        if (Array.hasOwnProperty(command)) {
+        if (command in []) {
           this.EventsHelper.events.get(prop) ? this.EventsHelper.events.get(prop)[command](funcArr) : this.EventsHelper.events.set(prop, [funcArr])
           target[prop] = (event) => {
             this.EventsHelper.events.get(prop).some(funcArr => {
