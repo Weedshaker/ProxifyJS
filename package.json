@@ -34,6 +34,6 @@
   },
   "homepage": "https://weedshaker.github.io/ProxifyJS/",
   "devDependencies": {
-    "standard": "*"
+    "standard": "^12.0.1"
   }
 }
