@@ -6,6 +6,7 @@ export default class WhyDocs extends MasterDocs {
     super()
     return this.html(__('div'), ...this.text())
   }
+
   text () {
     return [
       'Why?',
@@ -25,6 +26,7 @@ export default class WhyDocs extends MasterDocs {
             <span>I would be very happy to get a lot of PR's!</span>`
     ]
   }
+
   html (el, ...args) {
     const [title, text] = args
     return el.appendChild(__('h2'))

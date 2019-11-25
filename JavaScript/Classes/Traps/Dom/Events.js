@@ -44,11 +44,12 @@ export const Events = (Root = Proxify()) => class Events extends Root {
     }
     this.trap_get_none = this.trap_get_none.concat([getTrapEventOn])
   }
+
   // Handler Class ext*********************************************
   ownKeys (target) {
     // get possible keys
-    let keys = super.ownKeys(...arguments)
-    for (let key in target) {
+    const keys = super.ownKeys(...arguments)
+    for (const key in target) {
       if (/^on[a-z]{1}[a-z]*?$/.test(key)) {
         keys.push(`$${key}`)
       }

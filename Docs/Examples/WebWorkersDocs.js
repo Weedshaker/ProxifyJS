@@ -10,6 +10,7 @@ export default class WebWorkersDocs extends MasterExamples {
     this.name = 'webWorkersDocs'
     return this.html(__('div'), ...this.text())
   }
+
   text () {
     return [
       'WebWorkers',
@@ -34,6 +35,7 @@ export default class WebWorkersDocs extends MasterExamples {
             and run webWorkersObj.$wwFibonacci and webWorkersObj.fibonacci with your own number to calculate.`
     ]
   }
+
   example1 (receiver) {
     // assemble the ProxifyHook with the minimum traps required
     const inject = new ProxifyHook(WebWorkers()).get()

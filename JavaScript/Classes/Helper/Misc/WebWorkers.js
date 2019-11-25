@@ -8,6 +8,7 @@ export class WebWorkers {
     this.trackers = [] // simply used to track if function has already been set as this.workers
     this.scripts = []
   }
+
   // handled by the structured clone algorithm, so no need for convertTo
   // workerFunc can not reference anything outside (func becomes string), data has to be passed to the worker function
   create (workerFunc = this.workerFunc, callback = this.callbackFunc, scripts) {
@@ -22,6 +23,7 @@ export class WebWorkers {
     }
     return index
   }
+
   run (data = [], worker = this.workers[0], callback = this.callbacks[0]) {
     return new Promise((resolve, reject) => {
       worker(data, (err, result) => {
@@ -31,13 +33,16 @@ export class WebWorkers {
       })
     })
   }
+
   // dummy examples
   workerFunc (data) {
     return data
   }
+
   callbackFunc (result) {
     console.log(result)
   }
+
   getWebWorker (workerFunc, scripts = this.scripts) {
     // URL.createObjectURL
     window.URL = window.URL || window.webkitURL

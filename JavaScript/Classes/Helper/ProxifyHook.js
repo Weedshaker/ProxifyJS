@@ -8,6 +8,7 @@ export class ProxifyHook {
     this.proxyRef = proxyRef
     this.targetRef = targetRef
   }
+
   get (Handler = this.Handler) {
     return (value, force = false) => {
       if (force) {
@@ -22,7 +23,7 @@ export class ProxifyHook {
       }
       if (typeof value === 'string') value = document.createElement(value)
       if (typeof value !== 'object' || value === null) {
-        console.warn(value, `is not an object!`)
+        console.warn(value, 'is not an object!')
         return value
       }
       return (value[this.proxyRef] = new Proxy(value, new Handler(this.proxyRef, this.targetRef)))

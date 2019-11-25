@@ -9,6 +9,7 @@ export default class AnchorMenu extends MasterDocs {
     this.timeout = null
     return this.html(__('div'), body)
   }
+
   html (el, body) {
     return el.$func((receiver) => {
       window.addEventListener('scroll', (e) => {

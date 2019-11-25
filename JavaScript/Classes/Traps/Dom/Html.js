@@ -23,6 +23,7 @@ export const Html = (Root = Proxify()) => class Html extends Root {
 
     this.trap_get_none = this.trap_get_none.concat([getTrapAppendChildren, getTrapRemoveChildren])
   }
+
   // Handler Class ext*********************************************
   ownKeys (target) {
     // get possible keys

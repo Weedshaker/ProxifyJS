@@ -10,6 +10,7 @@ export default class DebugDocs extends MasterExamples {
     this.name = 'debugDocs'
     return this.html(__('div'), ...this.text())
   }
+
   text () {
     return [
       'Debug',
@@ -29,9 +30,10 @@ export default class DebugDocs extends MasterExamples {
             import { Debug } from './JavaScript/Classes/Traps/Misc/Debug.js'<br><br>`,
       'Example',
       this.example1,
-      `Just, click the button above and look at your console's output!`
+      'Just, click the button above and look at your console\'s output!'
     ]
   }
+
   example1 (receiver) {
     // assemble the ProxifyHook with the minimum traps required
     const inject = new ProxifyHook(Debug()).get()

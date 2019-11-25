@@ -10,6 +10,7 @@ export default class SubscribeDocs extends MasterExamples {
     this.name = 'subscribeDocs'
     return this.html(__('div'), ...this.text())
   }
+
   text () {
     return [
       'Subscribe',
@@ -37,12 +38,13 @@ export default class SubscribeDocs extends MasterExamples {
             import { Subscribe } from './JavaScript/Classes/Traps/Data/Subscribe.js'<br><br>`,
       'Example One',
       this.example1,
-      `Please, open the console in your developer tools and change the string values of state.a, state.b or state.c!`,
+      'Please, open the console in your developer tools and change the string values of state.a, state.b or state.c!',
       'Example Two',
       this.example2,
-      `Please, open the console in your developer tools and change the arrays value at state.a!`
+      'Please, open the console in your developer tools and change the arrays value at state.a!'
     ]
   }
+
   example1 (receiver) {
     // assemble the ProxifyHook with the minimum traps required
     const inject = new ProxifyHook(Subscribe()).get()
@@ -71,6 +73,7 @@ export default class SubscribeDocs extends MasterExamples {
     receiver.appendChild(p2.__raw__)
     receiver.appendChild(p3.__raw__)
   }
+
   example2 (receiver) {
     // assemble the ProxifyHook with the minimum traps required
     const inject = new ProxifyHook(Subscribe()).get()

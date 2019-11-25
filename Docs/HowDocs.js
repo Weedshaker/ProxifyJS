@@ -6,6 +6,7 @@ export default class HowDocs extends MasterDocs {
     super()
     return this.html(__('div'), ...this.text())
   }
+
   text () {
     return [
       'How?',
@@ -23,6 +24,7 @@ export default class HowDocs extends MasterDocs {
             properties but also functions and even trap properties and functions, which don't exist on the target object.`
     ]
   }
+
   html (el, ...args) {
     const [title, text] = args
     return el.appendChild(__('h2'))

@@ -6,6 +6,7 @@ export default class TitleDocs extends MasterDocs {
     super()
     return this.html(__('div'), ...this.text())
   }
+
   text () {
     return [
       'ProxifyJS',
@@ -39,6 +40,7 @@ export default class TitleDocs extends MasterDocs {
             for base knowledge regarding the mechanics behind ProxifyJS.`
     ]
   }
+
   html (el, ...args) {
     const [title, code, note] = args
     return el.$appendChildren([

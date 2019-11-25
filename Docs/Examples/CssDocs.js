@@ -10,6 +10,7 @@ export default class CssDocs extends MasterExamples {
     this.name = 'cssDocs'
     return this.html(__('div'), ...this.text())
   }
+
   text () {
     return [
       'CSS',
@@ -28,12 +29,13 @@ export default class CssDocs extends MasterExamples {
             import { Css } from './JavaScript/Classes/Traps/Dom/Css.js'<br><br>`,
       'Example One',
       this.example1,
-      `Please, open the console in your developer tools and change p.$css(\`{ ...anything }\`)!`,
+      'Please, open the console in your developer tools and change p.$css(`{ ...anything }`)!',
       'Example Two',
       this.example2,
-      `Please, open the console in your developer tools and change p.$css(\`:hover{ ...anything }\`, 'cssDocsExpl2')!`
+      'Please, open the console in your developer tools and change p.$css(`:hover{ ...anything }`, \'cssDocsExpl2\')!'
     ]
   }
+
   example1 (receiver) {
     // assemble the ProxifyHook with the minimum traps required
     const inject = new ProxifyHook(Css()).get()
@@ -51,6 +53,7 @@ export default class CssDocs extends MasterExamples {
     // append p to body
     receiver.appendChild(p)
   }
+
   example2 (receiver) {
     // assemble the ProxifyHook with the minimum traps required
     const inject = new ProxifyHook(Css()).get()

@@ -6,6 +6,7 @@ export default class TrapsDocs extends MasterDocs {
     super()
     return this.html(__('div'), ...this.text())
   }
+
   text () {
     return [
       'Traps:',
@@ -28,7 +29,7 @@ export default class TrapsDocs extends MasterDocs {
             import { Html } from './JavaScript/Classes/Traps/Dom/Html.js'<br>
             import { Events } from './JavaScript/Classes/Traps/Dom/Events.js'<br><br>
             const inject = new ProxifyHook(Events(Html(Css(Subscribe(LocalStorage(WebWorkers(Chain(Proxify())))))))).get()`,
-      `Or simply use the preset collection called InitBasic:`,
+      'Or simply use the preset collection called InitBasic:',
       `import { ProxifyHook } from './JavaScript/Classes/Helper/ProxifyHook.js'<br><br>
             <span>// Includes traps: Events, Html, Css, Subscribe, LocalStorage, WebWorkers, Chain, Proxify</span><br>
             import { InitBasic } from './JavaScript/Classes/Controller/InitBasic.js'<br><br>
@@ -37,6 +38,7 @@ export default class TrapsDocs extends MasterDocs {
             the "Docs" folder + index.html.</span>`
     ]
   }
+
   html (el, ...args) {
     const [title, text1, code1, text2, code2, note] = args
     return el.$appendChildren(

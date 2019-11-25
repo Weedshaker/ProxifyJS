@@ -36,6 +36,7 @@ export const Subscribe = (Root = Proxify()) => class Subscribe extends Root {
 
     this.trap_get_none = this.trap_get_none.concat([getTrapSubscribe, getTrapunsubscribe])
   }
+
   // Handler Class ext*********************************************
   set (target, prop, value, receiver) {
     if (this.SubscribeHelper.subscribeMap) {
@@ -49,6 +50,7 @@ export const Subscribe = (Root = Proxify()) => class Subscribe extends Root {
     }
     return super.set(...arguments)
   }
+
   ownKeys (target) {
     // get possible keys
     return super.ownKeys(...arguments).concat(['$subscribe', '$unsubscribe'])

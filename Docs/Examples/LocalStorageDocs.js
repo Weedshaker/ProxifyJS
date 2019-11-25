@@ -10,6 +10,7 @@ export default class LocalStorageDocs extends MasterExamples {
     this.name = 'localStorageDocs'
     return this.html(__('div'), ...this.text())
   }
+
   text () {
     return [
       'LocalStorage',
@@ -32,9 +33,10 @@ export default class LocalStorageDocs extends MasterExamples {
             import { LocalStorage } from './JavaScript/Classes/Traps/Data/LocalStorage.js'<br><br>`,
       'Example',
       this.example1,
-      `Please, open the console in your developer tools and inspect lsStateRaw. Also, navigate to the Storage tab, open Local Storage and "get" and "set" values on lsState!`
+      'Please, open the console in your developer tools and inspect lsStateRaw. Also, navigate to the Storage tab, open Local Storage and "get" and "set" values on lsState!'
     ]
   }
+
   example1 (receiver) {
     // assemble the ProxifyHook with the minimum traps required
     const inject = new ProxifyHook(LocalStorage()).get()

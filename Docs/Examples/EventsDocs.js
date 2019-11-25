@@ -10,6 +10,7 @@ export default class EventsDocs extends MasterExamples {
     this.name = 'eventsDocs'
     return this.html(__('div'), ...this.text())
   }
+
   text () {
     return [
       'Events',
@@ -31,19 +32,20 @@ export default class EventsDocs extends MasterExamples {
             import { Events } from './JavaScript/Classes/Traps/Dom/Events.js'<br><br>`,
       'Example One',
       this.example1,
-      `Click on the text above. Also, open the console in your developer tools and add or remove more events to eventsP!`,
+      'Click on the text above. Also, open the console in your developer tools and add or remove more events to eventsP!',
       'Example Two',
       this.example2,
-      `Click on the text above. Also, open the console in your developer tools and add or remove more events to eventsP!`
+      'Click on the text above. Also, open the console in your developer tools and add or remove more events to eventsP!'
     ]
   }
+
   example1 (receiver) {
     // assemble the ProxifyHook with the minimum traps required
     const inject = new ProxifyHook(Events()).get()
 
     // proxify the node to which event binding shall take place
     const eventsP = this.makeGlobal('eventsP', inject(document.createElement('p')))
-    eventsP.innerHTML = `!!!Click me!!!`
+    eventsP.innerHTML = '!!!Click me!!!'
 
     // attach first callback to p.onclick
     eventsP.$onclick((event, memory, target, prop, receiver) => {
@@ -59,13 +61,14 @@ export default class EventsDocs extends MasterExamples {
     // append p to body
     receiver.appendChild(eventsP)
   }
+
   example2 (receiver) {
     // assemble the ProxifyHook with the minimum traps required
     const inject = new ProxifyHook(Events()).get()
 
     // proxify the node to which event binding shall take place
     const eventsP = this.makeGlobal('eventsP', inject(document.createElement('p')))
-    eventsP.innerHTML = `Click me and don't P at an event!`
+    eventsP.innerHTML = 'Click me and don\'t P at an event!'
 
     // attach first callback to p.onclick
     eventsP.$onclick((event, memory, target, prop, receiver) => {
@@ -74,7 +77,7 @@ export default class EventsDocs extends MasterExamples {
     })
 
     const secondCallback = (event, memory, target, prop, receiver) => {
-      alert(`I remove myself!`)
+      alert('I remove myself!')
       // removes itself after first execution
       receiver.$onclick(secondCallback, 'remove')
     }

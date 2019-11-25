@@ -24,7 +24,7 @@ export const LocalStorage = (Root = Master()) => class LocalStorage extends Root
       return (prop) => {
         // eliminate any doublicated values
         this.LocalStorageHelper.storeArr = [...new Set(this.LocalStorageHelper.storeArr)]
-        let index = this.LocalStorageHelper.storeArr.indexOf(prop)
+        const index = this.LocalStorageHelper.storeArr.indexOf(prop)
         if (index !== -1) this.LocalStorageHelper.storeArr.splice(index, 1)
         return receiver
       }
@@ -56,11 +56,13 @@ export const LocalStorage = (Root = Master()) => class LocalStorage extends Root
 
     this.trap_getOwnPropertyDescriptor = this.trap_getOwnPropertyDescriptor.concat([getOwnPropertyDescriptorTrap])
   }
+
   // Handler Class ext*********************************************
   deleteProperty (target, prop) {
     this.LocalStorageHelper.delete(prop, target)
     return super.deleteProperty(...arguments)
   }
+
   ownKeys (target) {
     // get possible keys
     return super.ownKeys(...arguments).concat(['$lStoreAdd', '$lStoreRemove'].concat([...new Set((JSON.parse(this.LocalStorageHelper.get('keys', target)) || []).concat(this.LocalStorageHelper.storeArr.filter(prop => !(prop in target) && prop !== 'all')))]))

@@ -10,6 +10,7 @@ export default class HtmlDocs extends MasterExamples {
     this.name = 'htmlDocs'
     return this.html(__('div'), ...this.text())
   }
+
   text () {
     return [
       'HTML',
@@ -29,9 +30,10 @@ export default class HtmlDocs extends MasterExamples {
             import { Html } from './JavaScript/Classes/Traps/Dom/Html.js'<br><br>`,
       'Example',
       this.example1,
-      `Please, open the console in your developer tools and inspect the appended div!`
+      'Please, open the console in your developer tools and inspect the appended div!'
     ]
   }
+
   example1 (receiver) {
     // assemble the ProxifyHook with the minimum traps required
     const inject = new ProxifyHook(Html()).get()

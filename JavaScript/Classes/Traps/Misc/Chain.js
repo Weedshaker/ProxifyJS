@@ -45,6 +45,7 @@ export const Chain = (Root = Proxify()) => class Chain extends Root {
 
     this.trap_get_none = this.trap_get_none.concat([getTrapGet, getTrapSet, getTrapFunc, getTrap_])
   }
+
   // Handler Class ext*********************************************
   getFunction (target, prop, receiver) {
     return (...args) => {
@@ -61,9 +62,10 @@ export const Chain = (Root = Proxify()) => class Chain extends Root {
       return receiver
     }
   }
+
   ownKeys (target) {
     // get possible keys
-    let keys = super.ownKeys(...arguments)
+    const keys = super.ownKeys(...arguments)
     for (let key in target) {
       keys.push(key)
       if (typeof target[key] === 'function') {

@@ -34,6 +34,7 @@ export const Css = (Root = Proxify()) => class Css extends Root {
 
     this.trap_get_none = this.trap_get_none.concat([getTrapCss])
   }
+
   // Handler Class ext*********************************************
   ownKeys (target) {
     // get possible keys

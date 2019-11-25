@@ -10,6 +10,7 @@ export default class ChainDocs extends MasterExamples {
     this.name = 'chainDocs'
     return this.html(__('div'), ...this.text())
   }
+
   text () {
     return [
       'Chain',
@@ -42,12 +43,13 @@ export default class ChainDocs extends MasterExamples {
             import { Chain } from './JavaScript/Classes/Traps/Misc/Chain.js'<br><br>`,
       'Example without comments',
       this.example1,
-      `Please, open the console in your developer tools and play with chainState!`,
+      'Please, open the console in your developer tools and play with chainState!',
       'Example with comments',
       this.example2,
-      `Please, open the console in your developer tools and play with chainState!`
+      'Please, open the console in your developer tools and play with chainState!'
     ]
   }
+
   example1 (receiver) {
     // assemble the ProxifyHook with the minimum traps required
     const inject = new ProxifyHook(Chain()).get()
@@ -78,6 +80,7 @@ export default class ChainDocs extends MasterExamples {
         body.appendChild(inject('p')).$setInnerHTML(`${value}`)
       })
   }
+
   example2 (receiver) {
     // assemble the ProxifyHook with the minimum traps required
     const inject = new ProxifyHook(Chain()).get()

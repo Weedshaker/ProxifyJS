@@ -37,6 +37,7 @@ export const Proxify = (Root = Master()) => class Proxify extends Root {
     this.trap_get.push(getTrapFunction, getTrapProxy)
     this.trap_get_none.push(getTrapRaw)
   }
+
   // !!!Handler Class overwrite!!!*********************************
   getOwnPropertyDescriptor (target, prop) {
     if (prop === this.proxyRef) return undefined // used for "for"-loops, avoid giving the __proxy__ reference
@@ -44,6 +45,7 @@ export const Proxify = (Root = Master()) => class Proxify extends Root {
     if (this.trap_getOwnPropertyDescriptor.some(func => (result = func(...arguments)))) return result
     return Reflect.getOwnPropertyDescriptor(...arguments)
   }
+
   get (target, prop, receiver) {
     let result
     // for performance reason; existing props and none existing props get handled in different arrays
@@ -55,17 +57,20 @@ export const Proxify = (Root = Master()) => class Proxify extends Root {
     // cant convert Reflect.get(...arguments)
     return this.convertTo(this.proxyRef, target[prop])
   }
+
   set (target, prop, value, receiver) {
     let result
     if (this.trap_set.some(func => (result = func(...arguments)))) return result
     return Reflect.set(target, prop, this.convertTo(this.targetRef, value), target)
   }
+
   ownKeys (target) {
     // get possible keys
     let result
     if (this.trap_ownKeys.some(func => (result = func(...arguments)))) return result
     return [this.targetRef]
   }
+
   // !!!Adds to the namespace!!!***********************************
   getFunction (target, prop, receiver) {
     return (...args) => {
@@ -74,9 +79,11 @@ export const Proxify = (Root = Master()) => class Proxify extends Root {
       // returns results with target map to responding this.proxyRef
     }
   }
+
   convertTo (type, value) {
     return this.ProxifyHelper.convertTo(type, value)
   }
+
   convertArgsTo (type, value) {
     return this.ProxifyHelper.convertArgsTo(type, value)
   }

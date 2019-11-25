@@ -7,6 +7,7 @@ export default class MasterExamples extends MasterDocs {
     this.name = ''
     this.state = __({ expl: 1 })
   }
+
   html (el, ...args) {
     const [title, text, api, codeShared, codeTitle1, code1, result1, codeTitle2, code2, result2] = args
     return el.$appendChildren([
@@ -86,6 +87,7 @@ export default class MasterExamples extends MasterDocs {
         .$css(false, 'hr')
     ])
   }
+
   exampleHtml (receiver, code, codeShared, example, result, useWebWorker = true) {
     const oldHeight = receiver.offsetHeight || 410 // initial value of 410 as average height of example box
     receiver.innerHTML = ''
@@ -128,6 +130,7 @@ export default class MasterExamples extends MasterDocs {
                 }`, 'resultText')
     ])
   }
+
   regexCodeStr (code) {
     return code
       .replace(/(\r\n|\r|\n)\s{4}/g, '$1') // remove indentation

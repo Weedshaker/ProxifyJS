@@ -24,10 +24,11 @@ export const WebWorkers = (Root = Master()) => class WebWorkers extends Root {
 
     this.trap_get_none = this.trap_get_none.concat([getTrapWebWorkers])
   }
+
   // Handler Class ext*********************************************
   ownKeys (target) {
     // get possible keys
-    let keys = super.ownKeys(...arguments)
+    const keys = super.ownKeys(...arguments)
     for (let key in target) {
       if (typeof target[key] === 'function') {
         key = key.charAt(0).toUpperCase() + key.slice(1)

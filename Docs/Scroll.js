@@ -6,6 +6,7 @@ export default class Scroll {
     this.timeout = null
     this.saveScroll()
   }
+
   saveScroll () {
     window.addEventListener('scroll', (e) => {
       clearTimeout(this.timeout)
