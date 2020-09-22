@@ -26,11 +26,15 @@ export class WebWorkers {
 
   run (data = [], worker = this.workers[0], callback = this.callbacks[0]) {
     return new Promise((resolve, reject) => {
-      worker(data, (err, result) => {
+      const running = worker(data, (err, result) => {
         if (err) reject(err, console.warn(`SST: Error at ${this.name} -> ${err.message}`))
         if (callback) resolve(callback(result))
         resolve(result)
       })
+      if (running !== true) {
+        reject(running)
+        console.warn(running)
+      }
     })
   }
 
@@ -74,20 +78,20 @@ export class WebWorkers {
     }
 
     const worker = new Worker(URL.createObjectURL(blob))
+    let running = false
     return (data = [], callback = () => { }) => {
-      let ran
+      if (running) return new Error(`Worker is still running and can't be executed at this time: ${workerFunc}`)
       worker.onmessage = (e) => {
-        if (ran) return
-        ran = true
+        running = false
         callback(null, e.data)
       }
       worker.onerror = (e) => {
-        if (ran) return
-        ran = true
+        running = false
         callback(e)
-        return false
       }
       worker.postMessage(data) // can only have one argument as message
+      running = true
+      return true
     }
   }
 }
